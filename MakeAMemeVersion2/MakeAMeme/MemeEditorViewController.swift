@@ -18,6 +18,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
 
+    @IBOutlet weak var topToolbar: UIToolbar!
     @IBOutlet weak var toolBar: UIToolbar!
 
     
@@ -41,7 +42,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             NSStrokeColorAttributeName: UIColor .blackColor(),
             NSForegroundColorAttributeName: UIColor .whiteColor(),
             NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-            NSStrokeWidthAttributeName: Float(-1.0)
+            NSStrokeWidthAttributeName: Float(-3.0)
         ]
         textField.defaultTextAttributes = memeTextAttributes
         textField.delegate = self
@@ -167,6 +168,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         
 
         toolBar.hidden = true
+        topToolbar.hidden = true
         
         
         UIGraphicsBeginImageContext(view.frame.size)
@@ -175,10 +177,15 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         UIGraphicsEndImageContext()
         
         toolBar.hidden = false
+        topToolbar.hidden = false
         
         return memedImage
     }
+
     
+    @IBAction func cancelButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // Share button
     @IBAction func shareButtonPressed(sender: AnyObject) {

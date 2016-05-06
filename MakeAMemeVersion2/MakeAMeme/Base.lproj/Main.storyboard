@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LVD-eE-Ar7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gTP-1R-gB9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -21,6 +21,11 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UXN-B3-oyi">
                                 <rect key="frame" x="0.0" y="20" width="600" height="716"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTg-Db-hKc" userLabel="bottomTextField">
+                                <rect key="frame" x="296" y="492" width="8" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wmx-RC-NUG">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
@@ -44,11 +49,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jTg-Db-hKc" userLabel="bottomTextField">
-                                <rect key="frame" x="296" y="492" width="8" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggC-Vz-96I">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="action" id="l9c-2b-9BT">
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="lqo-Ov-Ezt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dSx-IC-mTP"/>
+                                    <barButtonItem title="Cancel" style="plain" id="ObQ-Ph-E5I">
+                                        <connections>
+                                            <action selector="cancelButton:" destination="BYZ-38-t0r" id="xKi-l1-9yX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,19 +74,17 @@
                             <constraint firstItem="Wmx-RC-NUG" firstAttribute="trailing" secondItem="UXN-B3-oyi" secondAttribute="trailing" id="KZC-Ur-ijy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="UXN-B3-oyi" secondAttribute="trailing" constant="-20" id="ZbH-P2-CsT"/>
                             <constraint firstItem="UXN-B3-oyi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="aWa-Nj-8UA"/>
+                            <constraint firstItem="ggC-Vz-96I" firstAttribute="top" secondItem="UXN-B3-oyi" secondAttribute="top" id="crf-J6-Usn"/>
                             <constraint firstItem="8wo-BI-HMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fHT-As-dE3"/>
+                            <constraint firstItem="ggC-Vz-96I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="gUJ-gP-PuI"/>
                             <constraint firstItem="8wo-BI-HMR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="47" id="j8L-ci-Gnj"/>
                             <constraint firstItem="jTg-Db-hKc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mhQ-hs-iRQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ggC-Vz-96I" secondAttribute="trailing" constant="-20" id="qve-mB-FsS"/>
                             <constraint firstItem="Wmx-RC-NUG" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="xDx-uT-12q"/>
                             <constraint firstItem="Wmx-RC-NUG" firstAttribute="top" secondItem="jTg-Db-hKc" secondAttribute="bottom" constant="30" id="yLK-lb-YMJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="lVc-4d-jzz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="l9c-2b-9BT">
-                            <connections>
-                                <action selector="shareButtonPressed:" destination="BYZ-38-t0r" id="lqo-Ov-Ezt"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="ipJ-JK-SnH"/>
                     </navigationItem>
                     <connections>
@@ -81,11 +95,12 @@
                         <outlet property="shareButton" destination="l9c-2b-9BT" id="w5n-ce-QqE"/>
                         <outlet property="toolBar" destination="Wmx-RC-NUG" id="p2G-Rl-eva"/>
                         <outlet property="topTextField" destination="8wo-BI-HMR" id="coM-GO-trH"/>
+                        <outlet property="topToolbar" destination="ggC-Vz-96I" id="ZsF-Ba-hR5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-749"/>
+            <point key="canvasLocation" x="365" y="-721"/>
         </scene>
         <!--List-->
         <scene sceneID="Q7e-J9-dbT">
@@ -104,32 +119,12 @@
             </objects>
             <point key="canvasLocation" x="-1088" y="-292"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="RWn-kl-eNW">
-            <objects>
-                <navigationController id="LVD-eE-Ar7" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cXA-8R-vfL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="gTP-1R-gB9" kind="relationship" relationship="rootViewController" id="rjh-le-Cgp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5dO-cR-IOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2667" y="-749"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ve4-3M-Tw5">
             <objects>
                 <tabBarController id="gTP-1R-gB9" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="loW-CG-9YG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QKH-7g-J00">
-                            <connections>
-                                <segue destination="WW0-Eg-u7M" kind="presentation" id="31w-YD-A2o"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="QKH-7g-J00"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="IdM-ak-T0B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -191,7 +186,13 @@
                             <outlet property="delegate" destination="Mce-5v-xeZ" id="COp-SA-tMk"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="HXD-x8-Zww"/>
+                    <navigationItem key="navigationItem" id="HXD-x8-Zww">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HNn-r6-WkB">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="65X-N3-tG0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="flowLayout" destination="UUx-9M-57R" id="lCh-I2-jLs"/>
                     </connections>
@@ -212,7 +213,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-U4-mMy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0ed-U4-mMy">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
@@ -231,23 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GSL-JS-1V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-1565"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="dDx-ib-chT">
-            <objects>
-                <navigationController id="WW0-Eg-u7M" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dSE-qc-DwU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ytx-4I-UD1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="biT-R4-kRc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="352" y="-749"/>
+            <point key="canvasLocation" x="365" y="-1461"/>
         </scene>
         <!--Meme Table View Controller-->
         <scene sceneID="eNn-6k-iBL">
@@ -272,7 +257,13 @@
                             <outlet property="delegate" destination="B9T-El-6nF" id="Fmt-sr-ePd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2gL-rb-qMf"/>
+                    <navigationItem key="navigationItem" id="2gL-rb-qMf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9u3-T6-ASh">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="RdH-DR-1lZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8p-v1-le5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -283,4 +274,7 @@
         <image name="CollectionIcon" width="25" height="25"/>
         <image name="TableIcon" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="65X-N3-tG0"/>
+    </inferredMetricsTieBreakers>
 </document>
